@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/foodBank.css' %}" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/8d60853972.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="login_menu">
+          <a href="{% url 'FoodBank:register' %}" id="individual" type="login"
+            >Register as Individual</a
+          >
+          <a href="{% url 'FoodBank:corp_register' %}" id="corporate"
+            >Register as Corporate</a
+          >
+          <a href="{% url 'admin:index' %}" id="admin">Admin</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="logo">
+        <div class="orgName">FOOD BANK</div>
+      </div>
+    </main>
+    <section class="data">
+      <div id="about" class="division">
+        <div class="about">
+          <div class="about-text">
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusamus, temporibus fugit placeat illum eaque eos est voluptas
+              minus vel nostrum rem molestiae aut dolores iusto architecto esse
+              aperiam ipsam eum quia dicta natus, mollitia vero qui. Obcaecati
+              maiores quo corporis fuga dolores totam voluptas voluptate, ipsa
+              esse ducimus ab eos labore sunt sapiente! Reiciendis, mollitia!
+              Tempore!
+            </p>
+          </div>
+        </div>
+        <div class="form">
+          <form action="{% url 'FoodBank:login' %}" method="POST">
+            {% csrf_token %}
+            <input
+              type="text"
+              name="username"
+              placeholder="username"
+              required
+            />
+            <br /><br />
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              required
+            />
+            <br />
+            <button type="submit">login</button>
+          </form>
+        </div>
+      </div>
+      <div id="vision-mission" class="division">
+        <div class="vision child">
+          <h2>Our Vision</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
+            temporibus fugit placeat illum eaque eos est voluptas minus vel
+            nostrum rem molestiae aut dolores iusto architecto esse aperiam
+            ipsam eum quia dicta natus, mollitia vero qui. Obcaecati maiores quo
+            corporis fuga dolores totam voluptas voluptate, ipsa esse ducimus ab
+            eos labore sunt sapiente! Reiciendis, mollitia! Tempore!
+          </p>
+        </div>
+        <div class="mission child">
+          <h2>Our Mission</h2>
+          <ul class="list-type">
+            <li>
+              To create a supportive environment that will address the issues of
+              hunger and malnutrition
+            </li>
+            <li>
+              To improve nutritional interventions by reinforcing the
+              interaction between the various actors in the programme
+            </li>
+            <li>
+              To develop a sustainable system that ends food wastage at all
+              levels of its supply chain from harvest to the consumption phase
+            </li>
+            <li>
+              To mobilize various resources and to build a culture of
+              innovations to accomplish zero hunger
+            </li>
+            <li>
+              To create and promote nationwide awareness and to lend a voice to
+              those who are not heard
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <section id="contact">
+        <h1 class="section-heading mb50px">
+          <span> Contact </span>
+        </h1>
+        <div id="contact-container">
+          <div id="contact-form-container">
+            <form id="contact-form">
+              <input
+                id="input-name"
+                name="name"
+                type="text"
+                placeholder="Your Name"
+              />
+              <input
+                id="input-email"
+                name="input-email"
+                type="text"
+                required
+                placeholder="Your Email"
+              />
+              <textarea
+                id="input-message"
+                name="input-message"
+                rows="2"
+                cols="40"
+                placeholder="Message"
+              ></textarea>
+              <br />
+              <button class="sub-btn" type="submit">SEND MESSAGE</button>
+            </form>
+          </div>
+          <div id="my-details-container" style="color: white">
+            <h3>Get In touch</h3>
+            <p>
+              Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book.
+            </p>
+
+            <h3>My Address</h3>
+            <div class="my-details-info-container">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Delhi, India</span>
+            </div>
+            <div class="my-details-info-container">
+              <i class="fas fa-mobile-alt"></i>
+              <span>9999999999</span>
+            </div>
+            <div class="my-details-info-container">
+              <i class="far fa-envelope"></i>
+              <span>myemail@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center social-icons">
+          <ul class="no-list-style horizontal-list">
+            <li>
+              <a
+                href="https://plus.google.com/u/0/103030702784925512939"
+                target="_blank"
+              >
+                <i class="fab fa-google-plus-g"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.facebook.com/manishakhattar54">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.quora.com/profile/Manisha-Khattar"
+                target="_blank"
+              >
+                <i class="fab fa-quora"></i>
+              </a>
+            </li>
+          </ul>
+          <p>©️ Copyright 2020-21 Bangalore Food Bank All Rights Reserved</p>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

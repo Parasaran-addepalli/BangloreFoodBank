@@ -1,0 +1,70 @@
+body{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  background-image: url("https://i.pinimg.com/originals/6c/b4/d6/6cb4d65f510cfe685777815e670627a8.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header nav{
+  /* border: 1px solid white; */
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 7px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+header nav div{
+  margin-left:60%;
+  margin-right: 5%;
+  /* border: 1px solid white; */
+  width: 50%;
+  opacity: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+header nav a{
+  border:none;
+  background: none;
+  color: rgb(255, 255, 255);
+  padding: 8px;
+  font-weight: 100;
+  text-decoration: none;
+}
+header nav a:hover{
+  border:0px;
+  background: rgb(217, 139, 29);
+  color: white;
+  transition: 0.2s linear;
+  border-radius: 40px;
+  padding: 8px;
+  cursor: pointer;
+  box-shadow: 0px 5px 50px white;
+}
+
+/* ----------------------------- */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 50%;
+  border: 1px solid #ddd;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+  font-size: 20px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}

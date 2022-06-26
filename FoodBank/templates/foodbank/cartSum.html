@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+{% load cart_tag %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Summary</title>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>
+                <span class="shopper">s</span> Shopping Cart
+            </h1>
+
+            <a href="#" class="visibility-cart transition is-open">X</a>
+        </div>
+
+        <div class="cart transition is-open">
+
+            <!-- <a href="#" class="btn btn-update">Update cart</a> -->
+
+
+            <div class="table">
+
+                <div class="layout-inline row th">
+                    <div class="col col-pro">Product</div>
+                    <div class="col col-price align-center ">
+                        Price
+                    </div>
+                    <div class="col col-qty align-center">QTY</div>
+                    <div class="col">Total</div>
+                </div>
+
+                <div class="layout-inline row">
+
+                    {% for key,value in request.session.cart.items %}
+                    <div class="col col-pro layout-inline">
+                        <img src="{{value.image}}" alt="kitten" />
+                        <p>{{value.name}}</p>
+                    </div>
+
+                    <div class="col col-price col-numeric align-center ">
+                        <p>{{value.price}}</p>
+                    </div>
+
+                    <div class="col col-qty layout-inline">
+                        <a href="{% url 'FoodBank:item_decrement' value.product_id %}"  class="qty qty-minus">-</a>
+                        <input type="numeric" value="{{value.quantity}}" />
+                        <a href="{% url 'FoodBank:item_increment' value.product_id %}" class="qty qty-plus">+</a>
+                    </div>
+                    <div class="col col-total col-numeric">
+                        <p>{{value.price|multiply:value.quantity}}</p>
+                    </div>
+                    {% endfor %}
+            </div>
+
+            <a href="" class="btn btn-update" id="pay-btn">Donate❤️</a>
+
+        </div>
+
+
+</body>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+
+    // add event listener to the payment button.
+    document.getElementById("pay-btn").onclick = function (e) {
+        var options = {
+      // Enter the Key ID generated from the Dashboard
+      key: "{{ razorpay_merchant_key }}",
+
+      // Amount is in currency subunits.
+      // Default currency is INR. Hence,
+      // 50000 refers to 50000 paise
+      amount: "{{ razorpay_amount }}",
+      currency: "{{ currency }}",
+
+      // Your/store name.
+      name: "Bangalore Food Bank",
+
+      // Pass the `id` obtained in the response of Step 1
+      order_id: "{{ razorpay_order_id }}",
+      callback_url: "{{ callback_url }}",
+    };
+        // initialise razorpay with the options.
+        var rzp1 = new Razorpay(options);
+      rzp1.open();
+      e.preventDefault();
+    };
+  </script>
+</html>

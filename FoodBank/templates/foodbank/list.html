@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Food List</title>
+        <link rel="stylesheet" href="{% static 'css/list.css' %}" />
+    </head>
+    <body>
+
+      <header>
+            <nav>
+              <div>
+                <a href="#">Who we are</a>
+                <a href="#">Why we exist</a>
+                <a href="#">What we do</a>
+                <a href="#">Our team</a>
+                <a href="#">Get Involved</a>
+              </div>
+            </nav>
+          </header>
+
+      <br>
+      <h2>Food List</h2>
+      <br>
+
+        <div style="overflow-x:auto;">
+          <table>
+              <tr>
+                  <td>Food Item</td>
+                  <td>Price per unit</td>
+                  <td>Quantity</td>
+                  <td>Submit</td>
+              </tr>
+
+              <div class = 'foodData'>
+                  {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>
+                            <select id="quantity" name="quantity">
+                                <option value="0.5">0.5</option>
+                                <option value="1.0">1.0</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2.0">2.0</option>
+                            </select>
+                        </td>
+                        <td><a href="{% url 'FoodBank:cart_add' product.id %}">Add To Cart</a></td>
+                    </tr>
+                    {% endfor %}
+          </table>
+        </div>
+        {% load cart_tag %}
+        Total Length :: {{request.session.cart|length}}
+        Cart Detail:
+
+        {% for key,value in request.session.cart.items %}
+        {{value.name}} {{value.price}} {{value.quantity}} {{value.image}} Total {{ value.price|multiply:value.quantity }}
+
+        {% endfor %}
+
+    </body>
+</html>

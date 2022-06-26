@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+header nav{
+    /* border: 1px solid white; */
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 1;
+    background: rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.4);
+}
+header nav .login_menu{
+    margin-left:60%;
+    margin-right: 5%;
+    /* border: 1px solid white; */
+    width: 50%;
+    opacity: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+header nav .login_menu a{
+    border:none;
+    background: none;
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    font-weight: 100;
+    text-decoration: none; 
+}
+header nav .login_menu a:hover{
+    border:0px;
+    background: rgb(217, 139, 29);
+    color: white;
+    transition: 0.2s linear;
+    border-radius: 40px;
+    padding: 8px;
+    cursor: pointer;
+    box-shadow: 0px 5px 50px white;
+}
+
+main{
+    background-image: url(http://bangalorefoodbank.com/images/banner.jpg);
+    width: 100vw;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main .logo{
+    background: black;
+    opacity: 0.5;
+    z-index: -1;
+    width: 100vw;
+    height: 90vh;
+}
+main .logo .orgName{
+    background: black;
+    opacity: 1;
+    z-index: 1;
+    width: 100vw;
+    height: 90vh;
+}
+section {
+    color: black;
+    width: 100vw;
+    /* height: 100vh; */
+    display: block;
+    background: rgb(196, 97, 10);
+}
+
+section .division{
+    display: flex;
+    color: white;
+    height:350px;
+    padding: 10px;
+    box-shadow:inset 0px 0px 5px rgb(255, 255, 255);
+}
+
+section .division
+section h2{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 90%;
+}
+section p{
+    color: rgb(216, 212, 212);
+    text-align: center;
+    width: 90%;
+}
+section .data #about{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+}
+section .division .about {
+    width: 80%;
+    align-items: center;
+    padding: 10px;
+}
+section .division .about .about-text h2{
+    width: 100%;
+    margin: 5px;
+    text-align: center;
+}
+section .division .about .about-text p{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+section #about .form{
+    border:2px solid white ;
+    padding: 40px;
+    margin-top: 40px;
+    width: 40%;
+    height: 55%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px rgb(148, 146, 146);
+}
+section #about .form button{
+    margin-top: 15px ;
+    margin-bottom: 15px ;
+    margin-left: 0px;
+    border: 2px solid rgb(119, 118, 118);
+    color: rgb(245, 109, 30);
+    border-radius: 30px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right:10px ;
+    background: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+section #about .form input{
+    color: rgb(245, 109, 30);
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+section #about .form input:hover{
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid grey;
+    
+}
+
+section #about .form button:hover{
+    border: 2px solid white;
+    transition: 0.2s linear;
+    box-shadow: 0px 0px 50px grey;
+    background: rgb(245, 109, 30);
+    color: white;
+}
+
+section .division:nth-child(2n){
+    color:rgb(245, 109, 30);
+    background: white;
+    text-align: center;
+}
+section .division:nth-child(2n) p{
+    color: black;
+    text-align: center;
+    margin: auto;
+}
+section .division .list-type li{
+    list-style-type: none;
+    color: black;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+}
+section .division .list-type li::before{
+    content: '>> ';
+    color: rgb(245, 109, 30);
+}
+#vision-mission{
+    display: flex;
+    justify-content: space-around;
+}
+section .division>.child{
+    width: 45%;
+    box-shadow:0px 0px 15px grey;
+    border-radius:30px;
+    padding: 10px;
+}
+
+footer #contact{
+    width: 100vw;
+    /* height: 50vh; */
+    background: linear-gradient(60deg,black,rgb(14, 12, 12),rgb(43, 42, 42),rgb(63, 61, 61));
+}
+.section-heading{
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+.mb75px {
+    margin-bottom: 75px;
+}
+footer #contact-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#contact-form{
+    width: 60%;
+    margin-left: 15%;
+}
+#contact-form input,
+textarea {
+    max-width: 50%;
+    margin: 15px;
+    padding: 4px 10px;
+    border: 0px solid transparent;
+    border-bottom: 2px solid white;
+    color: #d9dcdd;
+    background: transparent;
+    width: 100%;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+#contact-form button[type="submit"] {
+    background: transparent;
+    font-size: 0.95rem;
+    border: 2px solid white;
+    margin-top: 5%;
+    margin-left: 5%;
+    border-radius: 2px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.046875em;
+    line-height: 1;
+    padding: 0.8em 0.8em 0.78em;
+    text-transform: uppercase;
+}
+
+#contact-form button:hover {
+    background: white;
+    color: #13386fe0;
+}
+
+#contact .social-icons li a i {
+    font-size: 1.2rem;
+    margin: 40px 10px 10px;
+    padding: 10px 14px 20px 10px;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+#my-details-container{
+    width: 60%;
+    
+    margin-left:-15% ;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+#my-details-container h3{
+    padding: 5px;
+    text-align: left;
+}
+#my-details-container p{
+    padding: 5px;
+    text-align: left;
+}
+#my-details-container div{
+    padding: 5px;
+    text-align: left;
+}
+
+a{
+    color: white;
+}
+.social-icons{
+    display: flex;
+    justify-content: space-between;
+}
+.social-icons p{
+    font-size: 0.8rem;
+    text-align: right;
+    margin-right: 2% ;
+}
+
+.social-icons ul{
+    text-align: center;
+    display: flex;
+}
+.social-icons li{
+    margin-top: -50px;
+    padding: 10px;
+    list-style-type: none;
+}
+.social-icons li i{
+    
+    font-size: 0.5rem;
+    list-style-type: none;
+}
